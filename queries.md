@@ -14,15 +14,15 @@ where orders.shipperId == shippers.shipperId
 order by orders.orderDate < 1997-01-09 desc
 
 ### Display all ProductNames and Quantities placed on order 10251. Sort by ProductName. Shows 3 records.
-<!-- 518 records because I haven;t grabbed orderId -->
+<!-- 518 records because I haven't grabbed orderId -->
 SELECT productName, quantity
 from products, orderDetails
 where orderdetails.productId = products.productId
 
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 
-SELECT orders.orderId, customers.customerName, employees.lastName as Employee_Last_Name
-FROM orders
+SELECT orderId, customers.customerName, employees.lastName as Employee_Last_Name
+FROM  orders
 inner JOIN customers ON orders.customerId = customers.customerId
 inner JOIN employees ON orders.employeeId = employees.employeeId
 
